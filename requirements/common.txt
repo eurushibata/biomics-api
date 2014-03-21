@@ -1,4 +1,6 @@
 Flask==0.10.1
+Flask-Actions==0.6.6
+Flask-Script==0.6.7
 Flask-WTF==0.9.3
 Jinja2==2.7.1
 MarkupSafe==0.18
