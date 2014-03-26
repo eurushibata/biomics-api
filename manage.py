@@ -2,24 +2,11 @@
 # encoding:utf-8
 from commands import Encode, Roadmap, Tcga
 from flask import Flask, render_template
+from flask_debugtoolbar import DebugToolbarExtension
 
 # # # Set the path
 # import os, sys
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# # from flask.ext.script import Manager, Server
-# # # from tumblelog import app
-
-# from flaskext.actions import Manager
-
-# manager = Manager(app)
-
-# # Turn on debugger by default and reloader
-# manager.add_command("runserver", Server(
-#     use_debugger = True,
-#     use_reloader = True,
-#     host = '0.0.0.0')
-# )
 
 # follw this example: https://github.com/mitsuhiko/flask/tree/master/examples/flaskr/
 
@@ -32,6 +19,26 @@ db = MongoEngine(app)
 
 # import pyjade to Flask
 app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
+
+# the toolbar is only enabled in debug mode:
+app.debug = True
+app.config['SECRET_KEY'] = 'G3cw{uuw`_^81IktN6a5(3/O&l?fU[5l'
+
+app.config['DEBUG_TB_PANELS'] = [
+	'flask_debugtoolbar.panels.versions.VersionDebugPanel',
+    'flask_debugtoolbar.panels.timer.TimerDebugPanel',
+    'flask_debugtoolbar.panels.headers.HeaderDebugPanel',
+    'flask_debugtoolbar.panels.request_vars.RequestVarsDebugPanel',
+    'flask_debugtoolbar.panels.template.TemplateDebugPanel',
+    # 'flask_debugtoolbar.panels.sqlalchemy.SQLAlchemyDebugPanel',
+    'flask_debugtoolbar.panels.logger.LoggingPanel',
+    'flask_debugtoolbar.panels.profiler.ProfilerDebugPanel',
+    # Add the MongoDB panel
+	'flask.ext.mongoengine.panels.MongoDebugPanel',
+]
+
+toolbar = DebugToolbarExtension(app)
+
 
 manager = Manager(app)
 
