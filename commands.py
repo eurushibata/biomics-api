@@ -18,13 +18,14 @@ class Encode(Command):
     url = 'https://spreadsheets.google.com/pub?key=0AvQL5qBL6AfEdFJqaU16U3JjT2hUX0JjeFFKVk56QlE&hl=en&output=csv'
         
     def run(self):
-        Utils().download(url)
+        print Utils().download(self.url)
+
 
 class Roadmap(Command):
     url = 'http://www.ncbi.nlm.nih.gov/geo/roadmap/epigenomics/?view=samples&&mode=csv'
 
     def run(self):
-        Utils().download(url)
+        Utils().download(self.url)
 
 class Tcga(Command):
     url = 'https://tcga-data.nci.nih.gov/datareports/aliquotExport.htm'
@@ -32,5 +33,5 @@ class Tcga(Command):
     def run(self):
         parameters = {'exportType': 'csv'}
         data = urlencode(parameters)
-        request = Request(url, data)
+        request = Request(self.url, data)
         Utils().download(request)

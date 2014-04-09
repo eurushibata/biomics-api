@@ -1,0 +1,78 @@
+// base.jade
+doctype
+html(lang="en")
+    head
+        block head
+            script(src='/static/jquery-1.11.0/js/jquery-1.11.0.min.js')
+            script(src='/static/bootstrap-3.1.1/js/bootstrap.min.js')
+            link(rel='stylesheet', href='/static/bootstrap-3.1.1/css/bootstrap.min.css', type='text/css')
+            link(rel='stylesheet', href='/static/bootstrap-3.1.1/css/bootstrap-theme.min.css', type='text/css')
+            link(rel='stylesheet', href='/static/font-awesome-4.0.3/css/font-awesome.min.css', type='text/css')
+            title= title + " | biOMICs+" or "biOMICs+"
+    body
+        header.navbar.navbar-static-top.bs-docs-nav#top(role='banner')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type=button, data-toggle='collapse', data-target='.bs-navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#') biOMICs+
+
+                .collapse.navbar-collapse.bs-navbar-collapse(role='navigation')
+                    ul.nav.navbar-nav
+                        li.active
+                            a(href='#') Home
+                        li
+                            a(href='#about') About
+                        li
+                            a(href='#contact') Contact
+
+        .attribution Developed by 
+            a(href='http://bioinformatics.fmrp.usp.br', target='_blank'): span.omics-logo OMICs and Bioinformatics Laboratory
+            |  at 
+            a(href='http://rge.fmrp.usp.br/', target='_blank') Genetics Department
+            |  from
+            a(href='http://usp.br', target='_blank') University of São Paulo
+
+        .bs-docs-header#content
+            .container
+                h1 biOMICs+
+                p (biologically integrate OMICs): A R/Bioconductor package for integrating publicly available genomic data sets
+
+        section
+            .container
+                .row
+                    .col-md-6
+                        h3
+                            i.fa.fa-github
+                            |  Open Source &amp; Available on GitHub
+                            p We believe in open source software and 
+                                a(href='https://github.com/cbmi/') open-source our work
+                                |. Harvest is licensed under BSD 2-clause License.
+                    .col-md-6
+                        h3
+                            i.fa.fa-github
+                            |  Open Source &amp; Available on GitHub
+                            p We believe in open source software and 
+                                a(href='https://github.com/cbmi/') open-source our work
+                                |. Harvest is licensed under BSD 2-clause License.
+
+                .row
+                    .col-md-6
+                        h3
+                            i.fa.fa-github
+                            |  Open Source &amp; Available on GitHub
+                            p We believe in open source software and 
+                                a(href='https://github.com/cbmi/') open-source our work
+                                |. Harvest is licensed under BSD 2-clause License.
+                    .col-md-6
+                        h3
+                            i.fa.fa-github
+                            |  Open Source &amp; Available on GitHub
+                            p We believe in open source software and 
+                                a(href='https://github.com/cbmi/') open-source our work
+                                |. Harvest is licensed under BSD 2-clause License.
+
+
