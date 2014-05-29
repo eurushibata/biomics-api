@@ -1,7 +1,5 @@
-# -*- encoding:utf-8 -*-
-
-# SQL Alchemy settings
-DB_URI = 'sqlite:///test.db'
-
-SECRET_KEY = 'G3cw{uuw`_^81IktN6a5(3/O&l?fU[5l'
-
+DB_NAME = 'test'
+DB_USERNAME = 'admin'
+DB_PASSWORD = 'test'
+DB_HOST = 'localhost'
+DB_PORT = 27017

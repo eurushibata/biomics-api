@@ -25,13 +25,14 @@ class Roadmap(Command):
     url = 'http://www.ncbi.nlm.nih.gov/geo/roadmap/epigenomics/?view=samples&&mode=csv'
 
     def run(self):
-        Utils().download(self.url)
+        print Utils().download(self.url)
 
 class Tcga(Command):
     url = 'https://tcga-data.nci.nih.gov/datareports/aliquotExport.htm'
+    # url = 'http://www.ncbi.nlm.nih.gov/geo/roadmap/epigenomics/?view=samples&&mode=csv'
 
     def run(self):
         parameters = {'exportType': 'csv'}
         data = urlencode(parameters)
         request = Request(self.url, data)
-        Utils().download(request)
+        print Utils().download(request)

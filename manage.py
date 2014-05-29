@@ -4,17 +4,26 @@ from commands import Encode, Roadmap, Tcga
 from flask import Flask, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
-# # # Set the path
-# import os, sys
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# follw this example: https://github.com/mitsuhiko/flask/tree/master/examples/flaskr/
+# follow this example: https://github.com/mitsuhiko/flask/tree/master/examples/flaskr/
 
 from flask.ext.script import Manager # http://flask-script.readthedocs.org/en/latest/
 from flask.ext.mongoengine import MongoEngine # https://flask-mongoengine.readthedocs.org/en/latest/
 
+try:
+    from settings import *
+except ImportError:
+    print u'Warning: local_settings not found'
+
 app = Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {'DB': 'local'}
+app.config['MONGODB_SETTINGS'] = {
+    'DB':DB_NAME,
+    'USERNAME':DB_USERNAME,
+    'PASSWORD':DB_PASSWORD,
+    'HOST':DB_HOST,
+    'PORT':DB_PORT
+}
+
 db = MongoEngine(app)
 
 # import pyjade to Flask
@@ -42,10 +51,19 @@ toolbar = DebugToolbarExtension(app)
 
 manager = Manager(app)
 
-@app.route("/")
-def hello():
+
+@app.route('/')
+def index():
 	return render_template('index.jade')
-    # return "Hello World!"
+
+@app.route('/terms/')
+@app.route('/terms')
+def terms():
+    return render_template('terms.jade')
+
+@app.route('/terms/<path:path>/')
+def term(path):
+    return render_template('term.jade', path=path)
 
 @manager.command
 def dbdump():

@@ -4,10 +4,28 @@ html(lang="en")
     head
         block head
             script(src='/static/jquery-1.11.0/js/jquery-1.11.0.min.js')
-            script(src='/static/bootstrap-3.1.1/js/bootstrap.min.js')
+            
             link(rel='stylesheet', href='/static/bootstrap-3.1.1/css/bootstrap.min.css', type='text/css')
             link(rel='stylesheet', href='/static/bootstrap-3.1.1/css/bootstrap-theme.min.css', type='text/css')
+            script(src='/static/bootstrap-3.1.1/js/bootstrap.min.js')
+
+
+            link(rel='stylesheet', href='/static/bootstrap-tagsinput/bootstrap-tagsinput.css', type='text/css')
+            script(src='/static/bootstrap-tagsinput/bootstrap-tagsinput.js')
+
             link(rel='stylesheet', href='/static/font-awesome-4.0.3/css/font-awesome.min.css', type='text/css')
+
+            // script(src='/static/ajaxtags.js')
+            script(src='/static/typeahead.js/dist/typeahead.min.js')
+            script(src='/static/typeahead.js/test/vendor/hogan-2.0.0.js')
+
+            script(src='http://jquery-xml2json-plugin.googlecode.com/svn/trunk/jquery.xml2json.js')
+
+            link(rel='stylesheet', href='/static/app.css', type='text/css')
+            script(src='/static/a.js')
+
+            
+            
             title= title + " | biOMICs+" or "biOMICs+"
     body
         header.navbar.navbar-static-top.bs-docs-nav#top(role='banner')
@@ -35,44 +53,44 @@ html(lang="en")
             a(href='http://rge.fmrp.usp.br/', target='_blank') Genetics Department
             |  from
             a(href='http://usp.br', target='_blank') University of São Paulo
+        block content
 
-        .bs-docs-header#content
-            .container
-                h1 biOMICs+
-                p (biologically integrate OMICs): A R/Bioconductor package for integrating publicly available genomic data sets
+            .bs-docs-header#content
+                .container
+                    h1 biOMICs+
+                    p (biologically integrate OMICs): A R/Bioconductor package for integrating publicly available genomic data sets
 
-        section
-            .container
-                .row
-                    .col-md-6
-                        h3
-                            i.fa.fa-github
-                            |  Open Source &amp; Available on GitHub
-                            p We believe in open source software and 
-                                a(href='https://github.com/cbmi/') open-source our work
-                                |. Harvest is licensed under BSD 2-clause License.
-                    .col-md-6
-                        h3
-                            i.fa.fa-github
-                            |  Open Source &amp; Available on GitHub
-                            p We believe in open source software and 
-                                a(href='https://github.com/cbmi/') open-source our work
-                                |. Harvest is licensed under BSD 2-clause License.
+            section
+                .container
+                    .row
+                        .col-md-6
+                            h3
+                                i.fa.fa-medkit
+                                |  Explore your data not a dabatase
+                                p Designed for biomedical researchers, biOMICs+ is an package for integrating, discovering, and analyzing data.
 
-                .row
-                    .col-md-6
-                        h3
-                            i.fa.fa-github
-                            |  Open Source &amp; Available on GitHub
-                            p We believe in open source software and 
-                                a(href='https://github.com/cbmi/') open-source our work
-                                |. Harvest is licensed under BSD 2-clause License.
-                    .col-md-6
-                        h3
-                            i.fa.fa-github
-                            |  Open Source &amp; Available on GitHub
-                            p We believe in open source software and 
-                                a(href='https://github.com/cbmi/') open-source our work
-                                |. Harvest is licensed under BSD 2-clause License.
+                //-     .col-md-6
+                //-         h3
+                //-             i.fa.fa-github
+                //-             |  Open Source &amp; Available on GitHub
+                //-             p We believe in open source software and 
+                //-                 a(href='https://github.com/cbmi/') open-source our work
+                //-                 |. Harvest is licensed under BSD 2-clause License.
+
+                //- .row
+                //-     .col-md-6
+                //-         h3
+                //-             i.fa.fa-github
+                //-             |  Open Source &amp; Available on GitHub
+                //-             p We believe in open source software and 
+                //-                 a(href='https://github.com/cbmi/') open-source our work
+                //-                 |. Harvest is licensed under BSD 2-clause License.
+                //-     .col-md-6
+                //-         h3
+                //-             i.fa.fa-github
+                //-             |  Open Source &amp; Available on GitHub
+                //-             p We believe in open source software and 
+                //-                 a(href='https://github.com/cbmi/') open-source our work
+                //-                 |. Harvest is licensed under BSD 2-clause License.
 
 
