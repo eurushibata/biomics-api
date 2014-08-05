@@ -27,9 +27,9 @@ html(lang="en")
 
             
             
-            title= title + " | biOMICs+" or "biOMICs+"
+            title= title + " | biOMICs" or "biOMICs"
     body
-        header.navbar.navbar-static-top.bs-docs-nav#top(role='banner')
+        header.navbar.navbar-static-top.bs-docs-nav.navbar-fixed-top#top(role='banner')
             .container
                 .navbar-header
                     button.navbar-toggle(type=button, data-toggle='collapse', data-target='.bs-navbar-collapse')
@@ -37,7 +37,7 @@ html(lang="en")
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    a.navbar-brand(href='#') biOMICs+
+                    a.navbar-brand(href='') biOMICs+
 
                 .collapse.navbar-collapse.bs-navbar-collapse(role='navigation')
                     ul.nav.navbar-nav
@@ -45,6 +45,8 @@ html(lang="en")
                             a(href='#') Home
                         li
                             a(href='#about') About
+                        li
+                            a(href='#about') Experiments
                         li
                             a(href='#contact') Contact
 
@@ -56,20 +58,19 @@ html(lang="en")
             a(href='http://usp.br', target='_blank') University of São Paulo
         block content
 
-            .bs-docs-header#content
-                .container
-                    h1 biOMICs+
-                    p (biologically integrate OMICs): A R/Bioconductor package for integrating publicly available genomic data sets
+            
+                //- .container
+                //-     .row
+                //-         .col-md-6
+                //-             h3
+                //-                 i.fa.fa-medkit
+                //-                 |  Explore your data not a dabatase
+                //-                 p Designed for biomedical researchers, biOMICs+ is an package for integrating, discovering, and analyzing data.
 
-            section
-                .container
-                    .row
-                        .col-md-6
-                            h3
-                                i.fa.fa-medkit
-                                |  Explore your data not a dabatase
-                                p Designed for biomedical researchers, biOMICs+ is an package for integrating, discovering, and analyzing data.
+                
 
+                
+                        //- .highlight
                 //-     .col-md-6
                 //-         h3
                 //-             i.fa.fa-github

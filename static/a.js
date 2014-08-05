@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 	var apikey = '249a37ae-d343-431c-86c6-82a429f9b954';
-	var blacklist = ['CHEBI', 'Orphanet'];
+	var blacklist = ['CHEBI', 'Orphanet', 'OBI', 'CL', 'NCBITaxon', 'UO'];
 	// var url = 'http://data.bioontology.org/search?q=';
 
 	// var data = {
@@ -93,6 +93,7 @@ $(document).ready(function(){
         		var ontologyId = tempOntology[tempOntology.length-1].split('_');
 
         		if (blacklist.indexOf(ontologyId[0]) == -1) {
+        			console.log(ontologyId);
               return {
                   text: term.prefLabel,
                   definition: term.definition,
@@ -118,15 +119,15 @@ $(document).ready(function(){
 		highlight: true,
 		minLength: 1
 	},
-	{
-		name: 'bto-terms',
-		displayKey: 'text',
-	  valueKey: 'value',
-	  source: bto.ttAdapter(),
-	  templates: {
-	  	header: '<h3 class="ontology-name">BTO</h3>'
-	  }
-	},
+	// {
+	// 	name: 'bto-terms',
+	// 	displayKey: 'text',
+	//   valueKey: 'value',
+	//   source: bto.ttAdapter(),
+	//   templates: {
+	//   	// header: '<h3 class="ontology-name">BTO</h3>'
+	//   }
+	// },
 	{
 		name: 'efo-terms',
 		displayKey: 'text',

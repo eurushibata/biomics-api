@@ -1,5 +1,7 @@
-#!/usr/bin/env python
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+
+from flask.ext.script import Manager # http://flask-script.readthedocs.org/en/latest/
+
 from commands import Encode, Roadmap, Tcga
 from flask import Flask, render_template
 from flask_debugtoolbar import DebugToolbarExtension
@@ -7,7 +9,6 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 # follow this example: https://github.com/mitsuhiko/flask/tree/master/examples/flaskr/
 
-from flask.ext.script import Manager # http://flask-script.readthedocs.org/en/latest/
 from flask.ext.mongoengine import MongoEngine # https://flask-mongoengine.readthedocs.org/en/latest/
 
 try:
@@ -56,6 +57,16 @@ manager = Manager(app)
 def index():
 	return render_template('index.jade')
 
+@app.route('/search/')
+@app.route('/search')
+def search():
+    return render_template('search/search.jade')
+
+@app.route('/about/')
+@app.route('/about')
+def about():
+    return render_template('about.jade')
+
 @app.route('/terms/')
 @app.route('/terms')
 def terms():
@@ -81,7 +92,11 @@ def init_db():
 	"Updates de database entries."
 	print "Dump"
 
-manager.add_command("encode", Encode())
+@manager.command
+def encode():
+    Encode()
+
+# manager.add_command("encode", Encode())
 manager.add_command("roadmap", Roadmap())
 manager.add_command("tcga", Tcga())
 

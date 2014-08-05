@@ -2,17 +2,19 @@ from flask.ext.script import Command
 from urllib import urlencode
 from urllib2 import urlopen, Request
 from StringIO import StringIO
+import json
 
 class Utils:
     def download(self, url):
         l = list()
         urldata = urlopen(url)
         file = StringIO(urldata.read())
-        header = file.readline().replace("\"", '').rsplit('\n')[0].rsplit('\r')[0].rsplit(',') # extract header from csv
+        x = file.readline()
+        header = x.replace("\"", '').rsplit('\n')[0].rsplit('\r')[0].rsplit(',') # extract header from csv
         # blueprint = dict((k,'') for k in header) # creates blueprint for db
         for line in file.readlines():
             l.append(dict(zip(header,line.replace("\"", '').rsplit('\n')[0].rsplit('\r')[0].rsplit(','))))
-        return l
+        return json.JSONEncoder().encode(l)
 
 class Encode(Command):
     url = 'https://spreadsheets.google.com/pub?key=0AvQL5qBL6AfEdFJqaU16U3JjT2hUX0JjeFFKVk56QlE&hl=en&output=csv'
