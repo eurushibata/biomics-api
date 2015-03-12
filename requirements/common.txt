@@ -19,3 +19,5 @@ pymongo==2.6.3
 six==1.4.1
 wsgiref==0.1.2
 wstools==0.4.3
+
+xmltodict==0.9.0

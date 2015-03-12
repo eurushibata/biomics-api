@@ -27,7 +27,7 @@ class BaseConfig(object):
 
 class DefaultConfig(BaseConfig):
 
-    DEBUG = False
+    DEBUG = True
 
     # Flask-babel: http://pythonhosted.org/Flask-Babel/
     # ACCEPT_LANGUAGES = ['pt-br']

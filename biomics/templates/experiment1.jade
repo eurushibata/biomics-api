@@ -1,0 +1,29 @@
+// experiment1.jade
+extends base
+- var title = "Experiments"
+
+block content
+    section
+    .bs-docs-header#content
+        .container
+            h1 ENCODE
+
+    span.label.label-info {{ ct }}
+    .panel-body
+        table.table.table-striped
+
+            tr
+                td Accession
+                td Experiment
+                td Sample
+                td Ontology
+                td Synonym
+            {% for e in experiments %}
+            tr 
+                td {{ e['accession'] }}
+                td {{ e['assay_term_name'] }}
+                td {{ e['biosample_term_name'] }}
+                td {{ e['biosample_term_id'] }}
+                td {{ e['biosample_term_name'] }}
+            {% endfor %}
+            

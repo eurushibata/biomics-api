@@ -38,3 +38,6 @@ class Tcga(Command):
         data = urlencode(parameters)
         request = Request(self.url, data)
         print Utils().download(request)
+
+if __name__ == '__main__':
+    Encode().run()

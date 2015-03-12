@@ -101,3 +101,11 @@ def make_dir(dir_path):
             os.makedirs(dir_path)
     except Exception, e:
         raise e
+
+def urljoin(*args):
+    """
+    Joins given arguments into a url. Trailing but not leading slashes are
+    stripped for each argument.
+    """
+
+    return "/".join(map(lambda x: str(x).rstrip('/'), args))

@@ -1,0 +1,29 @@
+// experiment.jade
+extends base
+- var title = "Experiments"
+
+block content
+    section
+    .bs-docs-header#content
+        .container
+            h1 ROADMAP
+
+    span.label.label-info {{ ct }}
+    .panel-body
+        table.table.table-striped
+
+            tr
+                td # GEO Accession
+                td Experiment
+                td Sample
+                td Ontology
+                td Synonym
+            {% for e in experiments %}
+            tr 
+                td {{ e['# GEO Accession'] }}
+                td {{ e['Experiment'] }}
+                td {{ e['Sample Name'] }}
+                td {{ e['Ontology'] }}
+                td {{ e['Synonym'] }}
+            {% endfor %}
+            
